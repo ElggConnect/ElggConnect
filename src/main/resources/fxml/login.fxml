@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Copyright (c) 2015. , Beaufort 8
+  ~ released under MIT License
+  ~ http://opensource.org/licenses/MIT
+  -->
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="195.0" maxWidth="380.0" minHeight="195.0" minWidth="380.0" prefHeight="195.0" prefWidth="380.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.elggconnect.elggconnectclient.controller.LoginController">
+    <children>
+        <Label fx:id="lblStatus" layoutX="115.0" layoutY="120.0" text="%key.loginMessages" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+        <TextField id="tfUsername" fx:id="tfUsername" layoutX="115.0" layoutY="35.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="26.0" prefWidth="211.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+        <Label layoutX="35.0" layoutY="77.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="%key.password" textFill="#9d9c9c" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+
+        <PasswordField id="tfPassword" fx:id="tfPassword" layoutX="115.0" layoutY="72.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="26.0" prefWidth="211.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <Label layoutX="33.0" layoutY="40.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="%key.username" textFill="#9d9c9c" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <AnchorPane layoutX="68.0" layoutY="70.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+        <Button id="actionButton" fx:id="btnLogin" layoutX="233.0" layoutY="155.0" onAction="#btnLogin" text="%key.btnLogin" />
+    </children>
+</Pane>

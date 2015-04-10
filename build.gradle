@@ -1,0 +1,48 @@
+/*
+ * Copyright (c) 2015. , Alexander Stifel
+ * released under MIT License
+ * http://opensource.org/licenses/MIT
+ */
+
+apply plugin: 'java'
+apply from: 'javafx.plugin'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+
+if (!JavaVersion.current().isJava8Compatible()) {
+    throw new GradleException("Java 8 required, ${System.getProperty("java.version")} found")
+}
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+
+    compile 'com.googlecode.json-simple:json-simple:1.1.1'
+}
+
+
+javafx {
+
+    appName = 'ElggConnect'
+    mainClass = 'de.elggconnect.elggconnectclient.Main'
+    copyright = 'Copyright (c) 2015, Beaufort 8 GmbH'
+    description = 'Connect to your Elgg network'
+    version = '1.0.0'
+    licenseType = 'MIT'
+    category = 'Tool'
+
+
+    jvmArgs = ['-XX:+AggressiveOpts', '-XX:CompileThreshold=1']
+    systemProperties = [ 'prism.disableRegionCaching':'true' ]
+    arguments = ['-l', '--fast']
+
+    bundleArguments {
+        licenseFile = 'LICENSE'
+
+    }
+}
+
+

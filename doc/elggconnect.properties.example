@@ -1,0 +1,13 @@
+#
+# Copyright (c) 2015. , Beaufort 8
+# released under MIT License
+# http://opensource.org/licenses/MIT
+#
+
+# Required
+baseurl=http://example.tld/
+
+# Standard values for application window; change if desired
+appname=ElggConnect
+subline=Easy access to your Network
+image=/images/png/logo.png
