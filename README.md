@@ -10,13 +10,13 @@ easily visit your favorite Elgg-Network-Pages with custom shortcuts.
 ## Requirements
 
 - A favorite text editor or IDE
-- JDK 1.8 or later
+- Java SE Development Kit 8 (JDK) 1.8 or later 
 - Elgg Network with activated Elgg-Plugin [elgg_connect](https://github.com/ElggConnect/elgg_connect.git)
 
 ## Getting started
 
 
-#### Clone the Repo
+#### Copy or clone the Repo
 ```
 git clone https://github.com/ElggConnect/ElggConnect.git
 ```
