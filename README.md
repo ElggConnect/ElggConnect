@@ -57,7 +57,9 @@ Windows     gradlew.bat jfxDeploy
 
 ```
 
-You find the built application in the directory elggconnect/build/distributions/
+After a successful build process you find the application in the directory elggconnect/build/distributions/
+
+To build your application for other operating systems, you need to perform the steps above on a desired operating system.
 
 ## Hints
 
