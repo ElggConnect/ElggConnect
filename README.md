@@ -39,7 +39,7 @@ image=/images/png/logo.png
 
 ## Run ElggConnect with gradle for testing
 
-CD to your elggconnect-folder and execute the following terminal command:
+CD to your elggconnect-directory and execute the following terminal command:
 
 ```
 Unix        ./gradlew run
@@ -49,7 +49,7 @@ Windows     gradlew.bat run
 
 ## Deploy ElggConnect as a native package
 
-CD to your elggconnect-folder and execute the following terminal command:
+CD to your elggconnect-directory and execute the following terminal command:
 
 ```
 Unix        ./gradlew jfxDeploy
@@ -57,6 +57,8 @@ Windows     gradlew.bat jfxDeploy
 
 ```
 
-You find the built application in the elggconnect/build/distributions/
+You find the built application in the directory elggconnect/build/distributions/
 
+## Hints
 
+* If the error "JAVA\_HOME is set to an invalid directory ..." appears, see [docs.oracle.com](http://docs.oracle.com/cd/E19182-01/820-7851/inst_cli_jdk_javahome_t/index.html)
