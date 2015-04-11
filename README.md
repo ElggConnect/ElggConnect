@@ -37,8 +37,9 @@ image=/images/png/logo.png
 
 ```
 
-## Run ElggConnect
+## Run ElggConnect with gradle for testing
 
+CD to your elggconnect-folder and execute the following terminal command:
 
 ```
 Unix        ./gradlew run
@@ -46,7 +47,9 @@ Windows     gradlew.bat run
 
 ```
 
-## Deploy as a native package
+## Deploy ElggConnect as a native package
+
+CD to your elggconnect-folder and execute the following terminal command:
 
 ```
 Unix        ./gradlew jfxDeploy
@@ -54,6 +57,6 @@ Windows     gradlew.bat jfxDeploy
 
 ```
 
-
+You find the built application in the elggconnect/build/distributions/
 
 
