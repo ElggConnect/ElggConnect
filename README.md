@@ -27,7 +27,7 @@ git clone https://github.com/ElggConnect/ElggConnect.git
 * **Customize** elgconnect.properties
 
 ```
-# Required
+# Required base url with trailing slash
 baseurl=http://example.tld/
 
 # Standard values for application window; change if desired
