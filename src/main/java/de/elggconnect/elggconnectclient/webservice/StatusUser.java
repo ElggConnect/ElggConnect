@@ -134,9 +134,16 @@ public class StatusUser implements IWebServiceMethod {
         String url = (String) object.get("url");
         Long count = (Long) object.get("count");
 
-        //Save StatusObjects into Singleton List
-        this.statusUserManager.addStatusUserObject(new StatusUserObject(type, name, count, url));
+        String text = (String) object.get("text");
+        Long newCount = (Long) object.get("new");
 
+        if (type.equals("notification")) {
+            //Save StatusObjects into Singleton List
+            this.statusUserManager.addStatusUserObject(new StatusUserObject(type, name, count, url, text, newCount));
+        } else {
+            //Save StatusObjects into Singleton List
+            this.statusUserManager.addStatusUserObject(new StatusUserObject(type, name, count, url));
+        }
 
     }
 }
