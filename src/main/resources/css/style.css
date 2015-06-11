@@ -10,4 +10,38 @@
     -fx-padding: 5 30 5 30;
 }
 
+.root {
+    -fx-background-color: transparent;
+    -fx-fill            : transparent;
+}
+.notification {
+    -fx-background-color : #f0f0f0;
+    -fx-background-radius: 3;
+    -fx-effect           : innershadow(two-pass-box, rgba(255, 255, 255, 0.6), 5.0, 0.25, 0, 0);
+    -foreground-color    : #4c4c4c;
+    -icon-color          : #4c4c4c;
+}
+
+.notification .title {
+    -fx-font-size  : 1.083333em;
+    -fx-font-weight: bold;
+    -fx-text-fill  : -foreground-color;
+}
+
+.notification .message {
+    -fx-font-size       : 1.0em;
+    -fx-content-display : left;
+    -fx-graphic-text-gap: 10;
+    -fx-text-fill       : -foreground-color;
+}
+
+
+.hyperlink:hover {
+    -fx-border-style: none;
+}
+
+.hyperlink {
+    -fx-border-style: none;
+    -fx-focus-color: transparent;
+}
 

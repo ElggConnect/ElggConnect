@@ -62,6 +62,8 @@ public class Main extends Application {
     private MenuItem miPreference;
     public static Locale locale;
 
+    private Notification.Notifier notifier;
+
 
 // endregion
 
@@ -127,6 +129,9 @@ public class Main extends Application {
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }
+
+        //init notifier
+        notifier = Notification.Notifier.INSTANCE;
     }
 
     /**
