@@ -85,7 +85,7 @@ public class Main extends Application {
         String systemLanguage = System.getProperty("user.language");
 
         //Check if System Language is supported or use en as default
-        if (systemLanguage != "de" || systemLanguage !="en"){
+        if (systemLanguage != "de" || systemLanguage != "en") {
             systemLanguage = "en";
         }
         locale = new Locale(systemLanguage);
@@ -323,6 +323,9 @@ public class Main extends Application {
         for (StatusUserObject statusUserObject : statusUserManager
                 .getStatusUserObjects()) {
 
+            //Check notifications
+            checkNotification(statusUserObject);
+
 
             if (statusUserObject.getCount() == 0) {
                 MenuItem menuItem = new MenuItem(statusUserObject.getName());
@@ -361,6 +364,16 @@ public class Main extends Application {
 
         this.trayIcon.setPopupMenu(Main.popup);
 
+    }
+
+    /**
+     * Notifies User if there is unread content
+     */
+    private void checkNotification(StatusUserObject so) {
+
+        if (so.getType().equals("notification") && so.getNewCount() > 0) {
+            notifier.notify(new Notification(so.getName(), so.getText(), so.getUrl()));
+        }
     }
 
 
