@@ -18,6 +18,8 @@ public class StatusUserObject implements Comparable<StatusUserObject> {
     private Long count;
     private String name;
     private String url;
+    private String text; //Text for the Notification
+    private Long newCount; //Count of new Content
 
 
     public StatusUserObject(String type, String name, Long count, String url) {
@@ -25,6 +27,17 @@ public class StatusUserObject implements Comparable<StatusUserObject> {
         this.name = name;
         this.count = count;
         this.url = url;
+        this.text = "";
+        this.newCount = 0L;
+    }
+
+    public StatusUserObject(String type, String name, Long count, String url,String text,Long newCount) {
+        this.type = type;
+        this.name = name;
+        this.count = count;
+        this.url = url;
+        this.text = text;
+        this.newCount = newCount;
     }
 
     public String getUrl() {
@@ -43,6 +56,13 @@ public class StatusUserObject implements Comparable<StatusUserObject> {
         return name;
     }
 
+    public String getText() {
+        return text;
+    }
+
+    public Long getNewCount() {
+        return newCount;
+    }
 
     @Override
     public int compareTo(StatusUserObject o) {
