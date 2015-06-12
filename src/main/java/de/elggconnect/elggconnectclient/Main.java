@@ -250,7 +250,7 @@ public class Main extends Application {
 
             notificationTimer.schedule(
                     timerTask, 0, // 0 seconds after Application start
-                    2_000 // every 3 minutes
+                    180_000 // every 3 minutes
 
             );
             // add the application tray icon to the system tray.
