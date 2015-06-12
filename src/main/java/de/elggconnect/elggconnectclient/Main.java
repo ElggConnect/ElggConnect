@@ -85,7 +85,7 @@ public class Main extends Application {
         String systemLanguage = System.getProperty("user.language");
 
         //Check if System Language is supported or use en as default
-        if (systemLanguage != "de" || systemLanguage != "en") {
+        if (!Objects.equals(systemLanguage, "de") || !Objects.equals(systemLanguage, "en")) {
             systemLanguage = "en";
         }
         locale = new Locale(systemLanguage);

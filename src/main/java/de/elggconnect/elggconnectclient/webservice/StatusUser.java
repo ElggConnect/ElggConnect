@@ -71,7 +71,7 @@ public class StatusUser implements IWebServiceMethod {
             BufferedReader in = new BufferedReader(
                     new InputStreamReader(con.getInputStream()));
             String inputLine;
-            StringBuffer response = new StringBuffer();
+            StringBuilder response = new StringBuilder();
 
             //Read the response JSON
             while ((inputLine = in.readLine()) != null) {

@@ -43,10 +43,7 @@ public class LogoutController {
         this.btnLogout.defaultButtonProperty().bind(btnLogout.focusedProperty());
         this.cbNotification.setSelected(authentication.getNotification());
 
-        this.cbNotification.setOnAction((event) -> {
-            UserAuthentication.getInstance().saveUserPreferences(authentication.getUsername(), authentication.getPassword(), this.cbNotification.isSelected());
-
-        });
+        this.cbNotification.setOnAction((event) -> UserAuthentication.getInstance().saveUserPreferences(authentication.getUsername(), authentication.getPassword(), this.cbNotification.isSelected()));
 
     }
 

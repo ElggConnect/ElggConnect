@@ -54,11 +54,7 @@ public class UserAuthentication {
     }
 
     public boolean getNotification() {
-        if (this.notification.equals("true")) {
-            return true;
-        } else {
-            return false;
-        }
+        return this.notification.equals("true");
 
     }
 

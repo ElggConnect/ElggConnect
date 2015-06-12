@@ -72,7 +72,7 @@ public class AuthGetToken implements IWebServiceMethod {
             BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
 
             //Read the response JSON
-            StringBuffer text = new StringBuffer();
+            StringBuilder text = new StringBuilder();
             while ((line = reader.readLine()) != null) {
                 text.append(line).append("\n");
             }

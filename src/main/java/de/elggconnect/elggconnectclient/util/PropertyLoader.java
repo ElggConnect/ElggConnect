@@ -133,10 +133,7 @@ public class PropertyLoader {
 
 
     public boolean valuesNotEmpty() {
-        if (getAppname().isEmpty() || getBaseUrl().isEmpty() || getSubline().isEmpty() || getImage().isEmpty()) {
-            return false;
-        }
-        return true;
+        return !(getAppname().isEmpty() || getBaseUrl().isEmpty() || getSubline().isEmpty() || getImage().isEmpty());
     }
 
 

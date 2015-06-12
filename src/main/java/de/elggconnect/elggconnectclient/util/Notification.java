@@ -38,10 +38,10 @@ import javafx.util.Duration;
  */
 public class Notification {
 
+    public static final Image ICON = new Image(Notification.class.getResourceAsStream("/images/png/logo.png"));
     public final String TITLE;
     public final String MESSAGE;
     public final String URL;
-    public static final Image ICON = new Image(Notification.class.getResourceAsStream("/images/png/logo.png"));
     public final Image IMAGE;
 
 
@@ -112,7 +112,7 @@ public class Notification {
 
 
         /**
-         * Method to stop and close the notification
+         * Method to clear and close the notification
          */
         public void stop() {
             popups.clear();
@@ -121,7 +121,7 @@ public class Notification {
 
 
         /**
-         * Show the given Notification on the screen
+         * Show the Notification
          *
          * @param NOTIFICATION
          */
@@ -145,15 +145,15 @@ public class Notification {
          */
         private void preOrder() {
             if (popups.isEmpty()) return;
-            for (int i = 0; i < popups.size(); i++) {
+            for (Popup popup : popups) {
                 switch (popupLocation) {
                     case TOP_LEFT:
                     case TOP_CENTER:
                     case TOP_RIGHT:
-                        popups.get(i).setY(popups.get(i).getY() + height + spacingY);
+                        popup.setY(popup.getY() + height + spacingY);
                         break;
                     default:
-                        popups.get(i).setY(popups.get(i).getY() - height - spacingY);
+                        popup.setY(popup.getY() - height - spacingY);
                 }
             }
         }
