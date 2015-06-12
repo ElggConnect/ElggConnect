@@ -22,8 +22,9 @@ import java.util.prefs.Preferences;
 public class UserAuthentication {
     private static final String ID1 = "Username";
     private static final String ID2 = "Password";
+    private static final String ID3 = "Notification";
     private static UserAuthentication ourInstance = new UserAuthentication();
-    private String username, password, authToken, baseURL;
+    private String username, password, authToken, baseURL, notification;
     private Boolean isLogged;
     private Preferences pref;
 
@@ -52,6 +53,15 @@ public class UserAuthentication {
         return password;
     }
 
+    public boolean getNotification() {
+        if (this.notification.equals("true")) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
 
     public String getAuthToken() {
         return authToken;
@@ -76,17 +86,20 @@ public class UserAuthentication {
         pref = Preferences.userRoot().node(this.getClass().getName());
         this.username = pref.get(ID1, "");
         this.password = EncryptUtils.base64decode(pref.get(ID2, ""));
+        this.notification = pref.get(ID3, "false");
+
 
     }
 
     /**
      * save user preferences and encode the password
      */
-    public void saveUserPreferences(String username, String password) {
+    public void saveUserPreferences(String username, String password, boolean notification) {
         // This will define a node in which the preferences can be stored
         pref = Preferences.userRoot().node(this.getClass().getName());
         pref.put(ID1, username);
         pref.put(ID2, EncryptUtils.base64encode(password));
+        pref.put(ID3, String.valueOf(notification));
         loadUserPreferences();
 
     }
@@ -133,10 +146,12 @@ public class UserAuthentication {
         pref = Preferences.userRoot().node(this.getClass().getName());
         pref.put(ID1, "");
         pref.put(ID2, "");
+        pref.put(ID3, "false");
         this.username = "";
         this.password = "";
         this.authToken = "";
         this.isLogged = false;
+        this.notification = "false";
     }
 
 }

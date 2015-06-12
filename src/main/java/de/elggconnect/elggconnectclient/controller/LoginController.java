@@ -39,6 +39,8 @@ public class LoginController   {
 
     private ResourceBundle resources;
 
+    private Boolean notification = true; //default
+
     @FXML
 /**
  * Set up the Login View
@@ -64,6 +66,7 @@ public class LoginController   {
         if (!UserAuthentication.getInstance().isEmpty()) {
             this.tfUsername.setText(UserAuthentication.getInstance().getUsername());
             this.tfPassword.setText(UserAuthentication.getInstance().getPassword());
+            this.notification = UserAuthentication.getInstance().getNotification();
         }
     }
 
@@ -73,7 +76,7 @@ public class LoginController   {
      */
     public void btnLogin() {
         //Store username and password
-        UserAuthentication.getInstance().saveUserPreferences(tfUsername.getText(), tfPassword.getText());
+        UserAuthentication.getInstance().saveUserPreferences(tfUsername.getText(), tfPassword.getText(),notification);
         //Check if username and password is valid
         if (UserAuthentication.getInstance().connect()) {
             //Load Logout Scene and run main task

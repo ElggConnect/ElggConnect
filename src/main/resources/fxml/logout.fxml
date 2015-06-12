@@ -24,6 +24,6 @@
             </font>
         </Label>
         <Button id="actionButton" fx:id="btnLogout" layoutX="224.0" layoutY="155.0" onAction="#btnLogout" text="%key.btnLogout" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-      <CheckBox id="cbNotification" layoutX="33.0" layoutY="89.0" mnemonicParsing="false" text="%key.showNotifications" textFill="#9d9c9c" />
+      <CheckBox fx:id="cbNotification" id="cbNotification" layoutX="33.0" layoutY="89.0" mnemonicParsing="false" text="%key.showNotifications" textFill="#9d9c9c" />
     </children>
 </Pane>

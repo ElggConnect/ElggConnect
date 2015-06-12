@@ -29,6 +29,8 @@ public class LogoutController {
     @FXML
     private CheckBox cbNotification;
 
+    private UserAuthentication authentication = UserAuthentication.getInstance();
+
 
     @FXML
     /**
@@ -36,9 +38,15 @@ public class LogoutController {
      * Show the logged in username
      */
     void initialize() {
-        this.lblLoggedUsername.setText(UserAuthentication.getInstance().getUsername());
+        this.lblLoggedUsername.setText(authentication.getUsername());
         //Bind Enter key to Logout Button
         this.btnLogout.defaultButtonProperty().bind(btnLogout.focusedProperty());
+        this.cbNotification.setSelected(authentication.getNotification());
+
+        this.cbNotification.setOnAction((event) -> {
+            UserAuthentication.getInstance().saveUserPreferences(authentication.getUsername(), authentication.getPassword(), this.cbNotification.isSelected());
+
+        });
 
     }
 
@@ -47,7 +55,7 @@ public class LogoutController {
      */
     public void btnLogout() {
         //Delete stored user data
-        UserAuthentication.getInstance().deleteUserPreferences();
+        authentication.deleteUserPreferences();
         Main.timerTask.run();
     }
 
