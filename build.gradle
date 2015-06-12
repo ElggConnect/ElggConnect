@@ -30,7 +30,7 @@ javafx {
     mainClass = 'de.elggconnect.elggconnectclient.Main'
     copyright = 'Copyright (c) 2015, Beaufort 8 GmbH'
     description = 'Connect to your Elgg network'
-    version = '1.0.0'
+    version = '1.1'
     licenseType = 'MIT'
     category = 'Tool'
 
