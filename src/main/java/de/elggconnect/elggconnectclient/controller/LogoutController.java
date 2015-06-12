@@ -10,6 +10,7 @@ import de.elggconnect.elggconnectclient.Main;
 import de.elggconnect.elggconnectclient.util.UserAuthentication;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 
 /**
@@ -25,6 +26,8 @@ public class LogoutController {
     private Label lblLoggedUsername;
     @FXML
     private Button btnLogout;
+    @FXML
+    private CheckBox cbNotification;
 
 
     @FXML
@@ -35,7 +38,8 @@ public class LogoutController {
     void initialize() {
         this.lblLoggedUsername.setText(UserAuthentication.getInstance().getUsername());
         //Bind Enter key to Logout Button
-        btnLogout.defaultButtonProperty().bind(btnLogout.focusedProperty());
+        this.btnLogout.defaultButtonProperty().bind(btnLogout.focusedProperty());
+
     }
 
     /**

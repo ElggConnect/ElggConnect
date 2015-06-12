@@ -10,6 +10,10 @@
     -fx-padding: 5 30 5 30;
 }
 
+#cbNotification{
+
+}
+
 .root {
     -fx-background-color: transparent;
     -fx-fill            : transparent;
