@@ -250,7 +250,7 @@ public class Main extends Application {
 
             notificationTimer.schedule(
                     timerTask, 0, // 0 seconds after Application start
-                    180_000 // every 3 minutes
+                    2_000 // every 3 minutes
 
             );
             // add the application tray icon to the system tray.
@@ -368,12 +368,17 @@ public class Main extends Application {
 
     /**
      * Notifies User if there is unread content
+     * check notification settings
      */
     private void checkNotification(StatusUserObject so) {
 
-        if (so.getType().equals("notification") && so.getNewCount() > 0) {
-            notifier.notify(new Notification(so.getName(), so.getText(), so.getUrl()));
+        if (userAuthentication.getNotification()){
+            if (so.getType().equals("notification") && so.getNewCount() > 0) {
+                notifier.notify(new Notification(so.getName(), so.getText(), so.getUrl()));
+            }
         }
+
+
     }
 
 
