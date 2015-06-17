@@ -106,6 +106,8 @@ public class Notification {
             scene.getStylesheets().add(getClass().getResource("/css/style.css").toExternalForm());
 
             stage = new Stage();
+            stage.setMaxHeight(1);
+            stage.setMaxWidth(1);
             stage.initStyle(StageStyle.TRANSPARENT);
             stage.setScene(scene);
         }

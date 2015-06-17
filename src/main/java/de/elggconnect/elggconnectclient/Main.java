@@ -85,10 +85,10 @@ public class Main extends Application {
         String systemLanguage = System.getProperty("user.language");
 
         //Check if System Language is supported or use en as default
-        if (!Objects.equals(systemLanguage, "de") || !Objects.equals(systemLanguage, "en")) {
+        if (!Objects.equals(systemLanguage, "de") && !Objects.equals(systemLanguage, "en")) {
             systemLanguage = "en";
         }
-        locale = new Locale(systemLanguage);
+        locale = new Locale.Builder().setLanguage(systemLanguage).build();
         //Load Strings
         messages = ResourceBundle.getBundle("config.elggconnect", locale);
 
