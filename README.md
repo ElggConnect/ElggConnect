@@ -22,9 +22,9 @@ git clone https://github.com/ElggConnect/ElggConnect.git
 ```
 #### Create configuration-file
 
-* **Copy** *doc/elgconnect.properties.example* into */src/main/resources/config/*
-* **Rename** the file to *elgconnect.properties*
-* **Customize** elgconnect.properties
+* **Copy** *doc/elggconnect.properties.example* into */src/main/resources/config/*
+* **Rename** the file to *elggconnect.properties*
+* **Customize** elggconnect.properties
 
 ```
 # Required base url with trailing slash
